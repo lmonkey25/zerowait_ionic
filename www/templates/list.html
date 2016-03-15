@@ -1,0 +1,50 @@
+<ion-view title="List" hide-nav-bar="true" class="listpage">
+	<div class="custom-header list">
+        <!--<img class="mark" src="img/list.png" width="30px" height="26px">-->
+        <p>Zero Wait</p> 
+        <button class = "maplist" ng-click="onClick()"> MAP </button>       
+    </div>    
+	<div class="list">
+	  <div class="item item-input-inset search-filter-block">
+	    <label class="item-input-wrapper">
+	      <input type="text" placeholder="Search" ng-model="modalValue.key" ng-keypress="$event.keyCode == 13 && onSearch()">
+	    </label>
+	    <button class="button button-small" ng-click="showFilterDlg()">
+	      Filters
+	    </button>
+	  </div>
+	</div>
+    <ion-content class="has-header">
+    	
+    	<ul class="list res-list">
+		    <li ng-repeat="item in results" ui-sref="detail({id:item.no})" class="item">
+		      <img src="img/rest.jpg" width="60px" height="60px">
+		      <span class="time">Time:{{item.time}}</span>
+		      <div class="info">
+		      	<p class="title">{{item.name}}</p>
+		      	<p>Location: {{item.address}}</p>
+		      	<p>Distance: {{item.distance}}</p>
+		      </div>
+		    </li>		        
+		</ul>
+	</ion-content>
+</ion-view>
+
+<script id="filterModal" type="text/ng-template">	
+	<ion-modal-view id="filterModalView">
+		<ion-header-bar>			
+			<h1 class="title">Filters</h1>
+			<button class="button button-clear button-positive" ng-click="closeFilterDlg()">Done</button>
+		</ion-header-bar>
+		<ion-content>
+			<div class="list">
+			  <div class="item rating_check">
+			  	<ion-checkbox ng-model="modalValue.mRatingCheck" ng-change="changeModalValues(modalValue)">3.5 over rating</ion-checkbox>
+			  </div>
+			  <div class="item open_check">
+			  	<ion-checkbox ng-model="modalValue.mOpenCheck" ng-change="changeModalValues(modalValue)">Open Now</ion-checkbox>
+			  </div>
+			</div>
+		</ion-content>
+	</ion-modal-view>
+</script>

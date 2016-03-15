@@ -1,0 +1,70 @@
+<ion-view title="Reservation" hide-nav-bar="true" class="reservationpage">
+	  <div class="custom-header reservation">        
+        <h4>Reservation</h4>
+    </div>
+    <ion-content padding="true" class="has-header reservation-table">
+        <h4>Current Reservation</h4>     
+        <ion-list>
+            <ion-item click-for-options ng-repeat="item in currentreservations"  item="item">              
+              <p><b>Name: &nbsp;</b>{{item.name}}</p>
+              <p><b>Group Size: &nbsp;</b>{{item.group_size}}</p>
+              <p><b>Scheduled Time: &nbsp;</b>{{item.scheduled_datetime | date:'MMM dd, yyyy h:mm a'}}</p>              
+              <ion-option-button class="button-ion ion-edit"
+                                 ng-click="showEditDlg($index)">               
+              </ion-option-button>
+              <ion-option-button class="button-ion ion-android-delete"
+                                 ng-click="delete($index)">                
+              </ion-option-button>
+            </ion-item>
+       </ion-list>
+       <p ng-show="currentreservations.length == 0">There is no reservations.</p>
+
+       <h4>Visited Hotels</h4>
+       <ion-list>
+            <ion-item ng-repeat="item in pastreservations">              
+              <p><b>Name: &nbsp;</b>{{item.name}}</p>
+              <p><b>Group Size: &nbsp;</b>{{item.group_size}}</p>
+              <p><b>Visited Time: &nbsp;</b>{{item.scheduled_datetime | date:'MMM dd, yyyy h:mm a'}}</p>                      
+            </ion-item>
+       </ion-list>
+       <p ng-show="pastreservations.length == 0">There is no visited Hotels.</p>
+    </ion-content>
+    <script id="editdlg" type="text/ng-template"> 
+      <ion-modal-view id="editdlgview">
+        <ion-header-bar>      
+          <h1 class="title">Reservation Time</h1>
+          <button class="button button-clear button-positive" ng-click="closeEditDlg()">Save</button>
+        </ion-header-bar>
+        <ion-content>
+            <div class="row">
+               <div class="col col-20">
+                <a class="button button-block button-clear" ng-disabled="true">Hour</a>
+              </div>          
+              <div class="col col-10">
+                <a class="button button-block icon-left ion-chevron-left button-clear" ng-click="setOrderDateTime(- 60 * 60 * 1000)"></a>
+              </div>
+              <div class="col col-50">
+                <a class="button button-clear button-block" ng-disabled="true">{{mOrderChange.scheduled_datetime | date:'h a'}}</a>
+              </div>
+              <div class="col col-10">
+                <a class="button button-block icon-right ion-chevron-right button-clear" ng-click="setOrderDateTime(60 * 60 * 1000)"></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-20">
+                <a class="button button-block button-clear" ng-disabled="true">Mins</a>
+              </div> 
+              <div class="col col-10">
+                <a class="button button-block icon-left ion-chevron-left button-clear" ng-click="setOrderDateTime(- 15 * 60 * 1000)"></a>
+              </div>
+              <div class="col col-50">
+                <a class="button button-clear button-block" ng-disabled="true">{{mOrderChange.scheduled_datetime.getMinutes()}}</a>
+              </div>
+              <div class="col col-10">
+                <a class="button button-block icon-right ion-chevron-right button-clear" ng-click="setOrderDateTime( 15 * 60 * 1000)"></a>
+              </div>
+            </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+</ion-view>

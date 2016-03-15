@@ -1,0 +1,131 @@
+<ion-view title="Page" hide-nav-bar="true" class="detailpage">
+    <div class="custom-header detail">
+       <a ui-sref="list"><i class="icon ion-ios-arrow-left"></i></a>
+       <h4>Zero Wait</h4>
+    </div>
+    <ion-content padding="true" class="has-header" on-swipe-left="onswipeleft()">
+       <img src="img/back.jpg" width="100%">
+       <span class="discount">30% Discount</span>
+       <div class="res-info">
+          <img src="img/rest.jpg" width="80px" height="80px">
+          <div class="text">
+            <p class="title">{{results[id].name}}</p>
+            <p class="location"><font color="#f1a30b" size="3"><i class="ion ion-location"></i></font>&nbsp;{{results[id].address}}</p>
+            <p class="tel"><font color="#f1a30b" size="3"><i class="ion ion-ios-telephone"></i></font>&nbsp;+{{results[id].phone1}}</p>
+            <p class="openhour">Open Hour : <font color="#f1a30b">{{results[id].open_hour}}</font> to <font color="#f1a30b">{{results[id].close_hour}}</font></p>
+          <div>
+       </div>
+       <div class="block">
+            <p class="title">
+                Wait Time:
+            </p>
+            <p class="content-block">
+                Wait Time (approx.)40 - 60 min <br>          
+                2 Persions - 40 minutes <br>           
+                4+ Persions - 60 minutes
+            </p>
+       </div>
+
+       <div class="block reserve">
+            <div class="item range range-positive">
+              <span>Persons:&nbsp;</span>
+              <input type="range" name="volume" ng-model="mOrder.persons" min="2" max="12">
+              <span>{{mOrder.persons}}</span>
+            </div>
+            <button class="button button-block button-light" ng-click="showDateTimeDlg()">
+              <i class="ion ion-calendar"></i>
+              {{mOrder.date | date:'MMM dd EEE, yyyy h:mm a'}}
+            </button>
+
+            <a class="reserve-btn button button-energized button-block icon ion-ios-paper-outline" ng-click="reserve()">&nbsp;&nbsp;Reserve Now</a>
+       </div>
+
+       
+       <div class="block">
+            <p class="title">
+               Restaurant Details:
+            </p>
+            <p class="content-block">
+               Lorem Ipsum is simply dummy text of the printing and typesetting industry Ipsum had been the industry's standard dummy text ever since 1500s,Loram Ipsum is simply dummy text.
+            </p>
+       </div>
+       <div class="photo block">
+            <p class="title">
+               Photo Gallery
+            </p>
+            <div class="gallery">
+                <ul>
+                    <li>
+                        <img src="img/rest.jpg">
+                    </li>
+                    <li>
+                        <img src="img/rest.jpg">
+                    </li>
+                </ul>
+            </div>
+       </div>
+       <div class="block">
+            <p class="title">
+               Website:
+            </p>
+            <p class="content-block">
+              {{results[id].website}}
+            </p>
+       </div>       
+       
+    </ion-content>
+
+    <script id="datetimedlg" type="text/ng-template"> 
+      <ion-modal-view id="datetimedlgview">
+        <ion-header-bar>      
+          <h1 class="title">Reservation Time</h1>
+          <button class="button button-clear button-positive" ng-click="closeDateTimeDlg()">Done</button>
+        </ion-header-bar>
+        <ion-content>        
+            <div class="row">
+              <div class="col col-20">
+                <a class="button button-block button-clear" ng-disabled="true">Date</a>
+              </div>
+              <div class="col col-10">
+                <a class="button button-block icon-left ion-chevron-left button-clear" ng-click="setOrderDateTime(-24 * 60 * 60 * 1000)"></a>
+              </div>
+              <div class="col col-50">
+                <a class="button button-clear button-block" ng-disabled="true">{{mOrder.date | date:'MMM d EEE, yyyy'}}</a>
+              </div>
+              <div class="col col-10">
+                <a class="button button-block icon-right ion-chevron-right button-clear" ng-click="setOrderDateTime(24 * 60 * 60 * 1000)"></a>
+              </div>
+            </div>
+            <div class="row">
+               <div class="col col-20">
+                <a class="button button-block button-clear" ng-disabled="true">Hour</a>
+              </div>          
+              <div class="col col-10">
+                <a class="button button-block icon-left ion-chevron-left button-clear" ng-click="setOrderDateTime(- 60 * 60 * 1000)"></a>
+              </div>
+              <div class="col col-50">
+                <a class="button button-clear button-block" ng-disabled="true">{{mOrder.date | date:'h a'}}</a>
+              </div>
+              <div class="col col-10">
+                <a class="button button-block icon-right ion-chevron-right button-clear" ng-click="setOrderDateTime(60 * 60 * 1000)"></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col col-20">
+                <a class="button button-block button-clear" ng-disabled="true">Mins</a>
+              </div> 
+              <div class="col col-10">
+                <a class="button button-block icon-left ion-chevron-left button-clear" ng-click="setOrderDateTime(- 15 * 60 * 1000)"></a>
+              </div>
+              <div class="col col-50">
+                <a class="button button-clear button-block" ng-disabled="true">{{mOrder.date.getMinutes()}}</a>
+              </div>
+              <div class="col col-10">
+                <a class="button button-block icon-right ion-chevron-right button-clear" ng-click="setOrderDateTime( 15 * 60 * 1000)"></a>
+              </div>
+            </div>
+        </ion-content>
+      </ion-modal-view>
+    </script>
+</ion-view>
+

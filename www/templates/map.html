@@ -1,0 +1,41 @@
+<ion-view title="map" hide-nav-bar="true" class="mappage">	
+	<div class="custom-header map">       
+        <p>Zero Wait</p>
+        <button class = "maplist" ng-click="onClick()"> LIST </button>        
+    </div>
+    <div class="list">
+	  <div class="item item-input-inset search-filter-block">
+	    <label class="item-input-wrapper">
+	      <input type="text" placeholder="Search" ng-model="modalValue.key" ng-keypress="$event.keyCode == 13 && onSearch()">
+	    </label>
+	    <button class="button button-small" ng-click="showFilterDlg()">
+	      Filters
+	    </button>
+	  </div>
+	</div>
+	
+    <ion-content class="has-header" scroll="false">
+    	<div id="map" data-tap-disabled="true" ng-click="onMap()"></div>
+    	<button class="button icon ion-android-locate mylocation" ng-click="setMyLocation()"></button>
+	</ion-content>
+
+	<script id="filterModal" type="text/ng-template">	
+		<ion-modal-view id="filterModalView">
+			<ion-header-bar>			
+				<h1 class="title">Filters</h1>
+				<button class="button button-clear button-positive" ng-click="closeFilterDlg()">Done</button>
+			</ion-header-bar>
+			<ion-content>
+				<div class="list">
+				  <div class="item rating_check">
+				  	<ion-checkbox ng-model="modalValue.mRatingCheck">3.5 over rating</ion-checkbox>
+				  </div>
+				  <div class="item open_check">
+				  	<ion-checkbox ng-model="modalValue.mOpenCheck">Open Now</ion-checkbox>
+				  </div>
+				</div>
+			</ion-content>
+		</ion-modal-view>
+	</script>
+</ion-view>
+

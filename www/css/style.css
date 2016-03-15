@@ -1,0 +1,484 @@
+html{
+	height: 100%;
+}
+
+ion-view.homepage ion-content{
+	top:0px !important;
+}
+ 
+ion-view.profilepage ion-content,
+ion-view.settingpage ion-content,
+ion-view.reservationpage ion-content,
+ion-view.listpage ion-content,
+ion-view.detailpage ion-content,
+ion-view.signuppage ion-content,
+ion-view.loginpage ion-content
+{
+	top:70px !important;
+}
+
+ion-view.listpage ion-content ,ion-view.mappage ion-content
+{
+	top: 117px !important;
+}
+
+ion-view.homepage ion-content,ion-view.mappage ion-content,ion-view.listpage ion-content, ion-view.signuppage ion-content,ion-view.loginpage ion-content{
+	background-color: #262141 !important;
+}
+
+.searchbox{
+	width: 400px;
+}
+
+.maplist {
+	float:right;
+	margin: 2px auto;
+	height: 40px;
+	border-color: transparent;
+	background-color:  transparent;
+	font-size: 20px;
+	font-weight: bold;
+
+}
+.custom-header{
+	height:70px !important;		
+	padding: 5px;
+	padding-top:20px !important;
+	position: absolute;
+	width: 100%;
+	z-index:1100;
+	color:white;
+}
+
+.custom-header.detail , .custom-header.map,.custom-header.reservation,.custom-header.list{
+	background-color: #39c07e !important;
+}
+
+.platform-ios .custom-header{
+	height:70px !important;
+	padding-top:20px !important;
+}
+
+.custom-header p{
+	margin:0;
+	line-height: 40px;
+	color:white;
+	font-size: 20px !important;
+	float:left;
+	font-weight: 400;
+}
+
+.custom-header img.mark{
+	float:left;
+	margin-top:7px;
+	margin-bottom: 7px;
+	margin-right:15px;
+}
+
+.custom-header.map .searchbox, .custom-header.list .searchbox{
+	border-radius: 5px;
+	position: relative;
+	height: 30px;
+	width: 300px;
+	padding-left:5px;
+	padding-right:5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	z-index: 999;
+}
+
+.custom-header.map a,.custom-header.list a{
+	display: block;
+	float:right;
+	margin-right:-160px;
+	margin-top:12px;
+	z-index: 1000;
+	width:16px;
+	height: 16px;
+}
+
+
+.custom-header.map a img,.custom-header.list a img{
+	margin-right: 3px;
+}
+
+.tabs{
+	border-bottom:none !important;
+}
+.tab-item{
+	border:none !important;
+	color:rgba(0,0,0,0.4) !important;
+}
+.tab-item-active{
+	background-color: #f1a30b !important;
+	color:white !important;
+	border:none !important;
+	margin-top:0 !important;
+}
+
+.custom-header.list .searchbox{
+	background-color: white; !important;
+	border:1px solid rgba(0,0,0,0.3);
+}
+
+.custom-header.reservation a{
+	float:right;
+	padding:3px 7px;
+	color:rgba(255,255,255,0.5);
+	display: block;	
+	height: 40px;
+	margin-left:10px;
+	border-radius:8px;
+	margin-top:-37px;
+}
+
+.res-list li{
+	margin-bottom: 0px;
+	padding:15px 5px;
+	padding-left:10px;
+	margin-top:10px;
+}
+
+.res-list li img{
+	float:left;
+	opacity: 0.8 !important;
+	margin-right:5px;
+}
+
+
+.res-list li span.time{
+	position: absolute;
+	top:0;
+	right:0;
+	color:white;
+	font-size:10px;
+	background-color: #f1a30b;
+}
+
+.res-list li div.info{
+	
+}
+
+.res-list li div.info p.title{
+	color:black;
+	font-weight:600;
+	font-size:20px;
+}
+
+.res-list li div.info p{
+	color:black;
+	font-weight: 400;
+	font-size:12px;
+}
+
+.custom-header.detail a{	
+	color:white;
+	float:left;	
+}
+
+.custom-header.detail h4{
+	color:white;
+	text-align: center;
+}
+
+.custom-header.reservation h4{
+	color:white;
+	text-align: center;
+}
+.custom-header.reservation button.del{
+	float:left;
+	border:none;
+	background-color:transparent;
+	padding:0;
+	color:white;
+	font-size:28px;
+}
+
+.custom-header.reservation button.edit{
+	float:right;
+	border:none;
+	background-color:transparent;
+	padding:0;
+	color:white;
+	font-size:28px;
+}
+
+.custom-header.detail a{
+	color:white;
+	font-size: 30px;
+	line-height: 40px;
+	margin-left:8px;
+}
+
+.discount{
+	position: absolute;
+	top:10px;
+	right: 10px;
+	background-color: #f1a30b;
+	color:white;
+	padding:0 5px;
+}
+
+.res-info{
+	margin-top:-65px;
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.res-info img{
+	border:2px solid white;
+	margin-left:10px;
+	float: left;
+	margin-right: 5px;
+	margin-bottom:20px;
+}
+
+.res-info .text .title{
+   color:white;
+   font-size:18px;
+   margin-bottom: 0;  
+ }
+
+ .res-info .text .location, .res-info .text .tel{
+ 	margin-bottom: 0;
+ 	color:white !important;
+ 	font-weight: 300;
+ 	font-size:13px;
+ }
+
+
+.res-info .text .openhour{
+	margin-bottom: 0;
+	color:black;
+	font-size:12px;
+	font-weight: 500;
+}
+
+.block{
+	margin:5px 10px;
+	border:1px solid rgba(0,0,0,0.2);
+	padding:5px;
+	border-radius: 5px;
+}
+.block .title{
+	font-size:15px !important;
+	font-weight: 600;
+	color:black !important;
+}
+
+.block .content-block{
+	font-size:12px;
+	font-weight: 400;
+	color:rgba(0,0,0,0.3);
+	margin-bottom: 0;
+}
+
+.photo.block{
+	padding: 0;
+}
+
+.photo.block .title{
+	padding:5px;
+	border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+.photo.block .gallery li{
+	display:inline-block;
+	width:49%;
+	padding:5px;
+}
+
+.photo.block .gallery li img{
+	margin:0;
+	width: 100%;
+	border:none;
+}
+
+.reserve.block .item.range{
+	border:none;
+}
+
+.reserve-btn{
+	margin-top:10px;
+}
+
+.header{
+	background-color: rgba(0,0,0,0.1);
+}
+
+.reservation-table a{
+	font-size:18px;
+}
+
+.reservation-table ion-list ion-item ion-option-button.ion-android-delete{
+  color:#ef473a;
+}
+
+.reservation-table ion-list ion-item ion-option-button.ion-edit{
+  color:#39c07e;
+}
+
+.profile-info{
+	width: 100%;
+}
+
+.profile-info .photo{
+	width:110px;
+	float:left;
+	margin-right:15px;
+}
+
+.profile-info .info h3{
+	margin-bottom: 0;
+}
+.profile-info .info p{
+	margin-bottom: 0;
+}
+
+#map{
+	width:100%;
+	height: 100%;
+	display: block;
+}
+
+.custom-header.signup , .custom-header.login{
+	background-color: #262141 !important;
+}
+
+.custom-header.signup a ,.custom-header.login a {
+	color:white;
+	font-size: 30px;
+	line-height: 40px;
+	margin-left:8px;
+}
+
+.search-filter-block{
+	margin:0 !important;	
+	position: absolute;
+	top:70px;
+	left:0;
+	width: 100%;
+	z-index: 10000;
+}
+
+.hotelIcon{
+	width:24px;
+	height: 24px;
+}
+
+.iw_table_row{
+	height: 18px;
+	font-size: 12px;
+}
+
+.iw_attribute_name{
+	font-weight: bold;
+	text-align: right;
+}
+
+td, th{
+	display: table-cell;
+    vertical-align: middle;
+}
+
+.clear{
+	clear:both;
+}
+
+ion-modal-view#filterModalView{
+	min-height: 184px !important;
+	top: inherit !important;
+	bottom: 0 !important;
+	background-color:rgba(0,0,0,0.7) !important;
+}
+
+.rating_check,.open_check{
+	padding: 0 !important;
+}
+
+#filterModalView .item{
+	border:none !important;
+	background: none;
+	color:white;
+}
+
+#filterModalView ion-header-bar{
+	background: #39c07e !important;		
+	height: 45px !important;
+}
+
+#filterModalView ion-header-bar h1{
+	color:white;
+	margin-top:0 !important;
+}
+
+#filterModalView ion-header-bar button{
+	margin-top: 0 !important;
+}
+
+.mylocation{
+	position: absolute;
+	bottom: 10px;
+	right: 5px;
+	display: block;
+	z-index: 10000;
+	border-radius: 35px;
+	padding: 3px 10px;
+	background-color: #39c07e;
+}
+
+ion-modal-view#datetimedlgview{
+	min-height: 305px !important;
+	top: inherit !important;
+	bottom: 0 !important;
+	background-color:rgba(0,0,0,0.7) !important;
+}
+
+ion-modal-view#datetimedlgview .item{
+	border:none !important;
+	background: none;
+	color:white;
+}
+
+ion-modal-view#datetimedlgview ion-header-bar{
+	background: #39c07e !important;
+	height: 45px !important;
+}
+
+ion-modal-view#datetimedlgview ion-header-bar h1{
+	color:white;
+	margin-top:0 !important;
+}
+
+ion-modal-view#datetimedlgview ion-header-bar button{
+	margin-top:0 !important;
+}
+
+ion-modal-view#datetimedlgview a{
+	color:white;
+}
+
+ion-modal-view#editdlgview{
+	min-height: 225px !important;
+	top: inherit !important;
+	bottom: 0 !important;
+	background-color:rgba(0,0,0,0.7) !important;
+}
+
+ion-modal-view#editdlgview ion-header-bar{
+	background: #39c07e !important;
+	height: 45px !important;
+}
+
+ion-modal-view#editdlgview ion-header-bar h1{
+	color:white;
+	margin-top: 0 !important;
+}
+
+ion-modal-view#editdlgview ion-header-bar button{
+	margin-top: 0 !important;
+}
+
+ion-modal-view#editdlgview a{
+	color:white;
+}

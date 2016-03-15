@@ -1,0 +1,35 @@
+<ion-view title="Signup" hide-nav-bar="true" class="signuppage">
+    <div class="custom-header signup">
+       <a ui-sref="home"><i class="icon ion-ios-arrow-left"></i></a>       
+    </div>
+    <ion-content padding="true">
+        <div style="text-align:center;">
+            <img src="img/logo.png" width="50%" height="auto">
+        </div>           
+        <form class="list" name="signupForm" ng-submit="doSignup()">
+            <div class="spacer" style="width: 300px; height: 23px;"></div>
+            <label class="item item-input" name="fname">
+                <input type="text" placeholder="First Name" ng-model="signupFormData.fname">
+            </label>
+            <div class="spacer" style="width: 300px; height: 13px;"></div>
+            <label class="item item-input" name="lname">
+                <input type="text" placeholder="Last Name" ng-model="signupFormData.lname">
+            </label>
+            <div class="spacer" style="width: 300px; height: 13px;"></div>
+            <label class="item item-input" nmae="email">
+                <input type="text" placeholder="Email" ng-model="signupFormData.email">
+            </label>
+            <div class="spacer" style="width: 300px; height: 13px;"></div>
+            <label class="item item-input" name="phone">
+                <input type="tel" placeholder="Phone" ng-model="signupFormData.phone">
+            </label>
+            <div class="spacer" style="width: 300px; height: 13px;"></div>
+            <label class="item item-input" name="password">
+                <input type="password" placeholder="Password" ng-model="signupFormData.password">
+            </label>
+
+            <button type="submit" class="button button-energized button-block  icon ion-compose">&nbsp;&nbsp;Sign Up</button>            
+        </form>
+        
+    </ion-content>
+</ion-view>

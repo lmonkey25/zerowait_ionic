@@ -1,0 +1,49 @@
+<ion-view cache="false" hide-nav-bar="true" class="profilepage">
+	<div class="custom-header reservation">       
+        <h4>Profile</h4>       	
+    </div>
+    <ion-content padding="true" class="has-header">
+    	<div class="profile-info">
+    		<div class="photo">
+    			<img src="img/person.png" width="100%">
+    		</div>
+    		<div class="info">
+    			<h3>{{user.fname}}&nbsp;{{user.lname}}</h3>
+    			<p>Phone No: <font color="#f1a30b">{{user.phone}}</font></p>
+    		</div>
+        <div class="clear"></div>
+    	</div>
+      <br>
+      <div class="list">
+        <a class="item item-icon-right" href="#">
+          Edit Profile
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>        
+        <a class="item item-icon-right" href="#">
+          Send Feedback
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <a class="item item-icon-right" href="#">
+          Rate Out App
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <a class="item item-icon-right" href="#">
+          Term of Use
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <a class="item item-icon-right" href="#">
+          Privacy Policy
+          <i class="icon ion-ios-arrow-right"></i>
+        </a>
+        <a class="item item-icon-right" href="#">
+          Like Us on Facebook
+          <i class="icon ion-social-facebook"></i>
+        </a>
+        <a class="item item-icon-right" ng-click="logout()">
+          Logout
+          <i class="icon ion-log-out"></i>
+        </a>
+      </div>
+       	
+	</ion-content>
+</ion-view>
